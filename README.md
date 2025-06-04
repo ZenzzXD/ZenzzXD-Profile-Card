@@ -1,4 +1,4 @@
-# Gravatar Profile Card
+# Rynn Profile Card
 
 A simple, customizable profile card application built with Node.js and EJS templating, similar to Gravatar's profile display system.
 

@@ -1,5 +1,5 @@
 {
-  "name": "gravatar-profile-card",
+  "name": "rynn-profile-card",
   "version": "1.0.0",
   "description": "A simple, customizable profile card application built with Node.js and EJS templating, similar to Gravatar's profile display system.",
   "main": "index.js",
