@@ -40,6 +40,12 @@ const config = {
                     link: 'https://api.nekorinn.my.id'
                 },
                 {
+                    thumbnail: '/nekonime_img.png',
+                    name: 'Nekonime',
+                    desc: 'An anime streaming platform with a minimalist, ad-free, and user-friendly interface for a seamless viewing experience.',
+                    link: 'https://nekonime.nekorinn.my.id'
+                },
+                {
                     thumbnail: '/nekorinnbot_img.png',
                     name: 'Nekorinn Bott',
                     desc: 'A simple WhatsApp bot with a plugin-based handler. It’s modular, easy to extend, and designed for efficient command execution.',
