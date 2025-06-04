@@ -73,14 +73,6 @@ const config = {
 ### Verification
 Set `is_verified: true` to display verification badges on your profile and links.
 
-## Technology Stack
-
-- **Backend**: Node.js with Express
-- **Templating**: EJS
-- **Styling**: Tailwind CSS
-- **Icons**: Material Icons
-- **Fonts**: Google Fonts (Poppins)
-
 ## File Structure
 
 ```
