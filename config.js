@@ -38,6 +38,12 @@ const config = {
                     name: 'Nekorinn API\'s',
                     desc: 'A streamlined REST API service designed for developers who need quick access to multiple API functionalities in one place.',
                     link: 'https://api.nekorinn.my.id'
+                },
+                {
+                    thumbnail: '/nekorinnbot_img.png',
+                    name: 'Nekorinn Bott',
+                    desc: 'A simple WhatsApp bot with a plugin-based handler. It’s modular, easy to extend, and designed for efficient command execution.',
+                    link: 'https://wa.me/6285182338584?text=.menu'
                 }
             ],
             links: [
