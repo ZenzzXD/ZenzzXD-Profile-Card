@@ -1,0 +1,36 @@
+{
+  "name": "gravatar-profile-card",
+  "version": "1.0.0",
+  "description": "A simple, customizable profile card application built with Node.js and EJS templating, similar to Gravatar's profile display system.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "profile",
+    "card",
+    "gravatar",
+    "portfolio",
+    "express",
+    "ejs",
+    "tailwind",
+    "nodejs",
+    "web-profile",
+    "personal-card"
+  ],
+  "author": "rynn-k",
+  "license": "MIT",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rynn-k/Gravatar-Profile-Card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rynn-k/Gravatar-Profile-Card/issues"
+  },
+  "homepage": "https://github.com/rynn-k/Gravatar-Profile-Card#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

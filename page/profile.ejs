@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="<%= data.design?.background_hex || '#DAEAFF' %>">
+    <title><%= data.profile?.personal?.name || 'User' %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body style="background-color: <%= data.design?.background_hex || '#DAEAFF' %>;" class="min-h-screen p-4 flex items-center justify-center">
+    <div class="max-w-md w-full space-y-4">
+        <div class="bg-white rounded relative">
+            <div class="relative h-32 bg-white overflow-hidden rounded-t">
+                <% if (data.design?.header_image) { %>
+                    <img src="<%= data.design.header_image %>" alt="Header" class="w-full h-full object-cover">
+                <% } %>
+                
+                <a href="https://github.com/rynn-k" target="_blank">
+                    <button class="absolute top-4 right-4 w-10 h-10 bg-white bg-opacity-90 rounded flex items-center justify-center z-30">
+                        <span class="material-icons text-gray-700">code</span>
+                    </button>
+                </a>
+            </div>
+            
+            <div class="absolute top-6 left-6 z-50">
+                <div class="w-36 h-36 rounded-full overflow-hidden bg-white border-4 border-white">
+                    <% if (data.profile?.personal?.profile_url) { %>
+                        <img src="<%= data.profile.personal.profile_url %>" alt="Profile" class="w-full h-full object-cover">
+                    <% } else { %>
+                        <div class="w-full h-full bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
+                            <span class="material-icons text-purple-400 text-3xl">person</span>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            
+            <div class="pt-14 px-6 pb-6 relative z-0">
+                <div class="mb-4">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h1 class="text-3xl font-semibold text-gray-900">
+                            <%= data.profile?.personal?.name || 'User' %>
+                        </h1>
+                        <% if (data.profile?.personal?.is_verified) { %>
+                            <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                <span class="material-icons text-white text-sm">verified</span>
+                            </div>
+                        <% } %>
+                    </div>
+                    
+                    <% if (data.profile?.professional?.job_title) { %>
+                        <p class="text-gray-600 text-sm">
+                            <%= data.profile.professional.job_title %><% if (data.profile?.professional?.company) { %>, <%= data.profile.professional.company %><% } %>
+                        </p>
+                    <% } %>
+                    
+                    <div class="flex items-center gap-2 text-sm text-gray-600 mb-1">
+                        <% if (data.profile?.personal?.pronunciation) { %>
+                            <span><%= data.profile.personal.pronunciation %></span>
+                            <span>•</span>
+                        <% } %>
+                        <% if (data.profile?.personal?.pronouns) { %>
+                            <span><%= data.profile.personal.pronouns %></span>
+                            <span>•</span>
+                        <% } %>
+                        <% if (data.profile?.personal?.location) { %>
+                            <span><%= data.profile.personal.location %></span>
+                        <% } %>
+                    </div>
+                </div>
+                
+                <% if (data.profile?.personal?.about) { %>
+                    <div class="mb-6">
+                        <p class="text-gray-900 text-sm"><%= data.profile.personal.about %></p>
+                    </div>
+                <% } %>
+                
+                <button class="w-full py-3 border border-blue-500 text-blue-500 rounded font-medium hover:bg-blue-50" onclick="copyLink()">
+                    Share
+                </button>
+            </div>
+        </div>
+        
+        <% if (data.design?.layout && data.design.layout.length > 0) { %>
+            <% data.design.layout.forEach(section => { %>
+                <% if (section === 'projects' && data.profile?.projects && data.profile.projects.length > 0) { %>
+                    <div class="bg-white rounded p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-4">Projects</h2>
+                        <div class="space-y-5">
+                            <% data.profile.projects.forEach(project => { %>
+                                <a href="<%= project.link %>" target="_blank" class="block">
+                                    <div class="flex flex-col">
+                                        <% if (project.thumbnail) { %>
+                                            <img src="<%= project.thumbnail %>" alt="<%= project.name %>" class="w-full h-full object-cover mb-4 shadow">
+                                        <% } %>
+                                        <div class="flex-1 text-left">
+                                            <div class="flex items-center gap-2">
+                                                <h3 class="font-medium text-gray-900"><%= project.name %></h3>
+                                                <span class="material-icons text-blue-500 text-sm">launch</span>
+                                            </div>
+                                            <% if (project.desc) { %>
+                                                <p class="text-xs text-gray-600 mt-1"><%= project.desc %></p>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </a>
+                            <% }) %>
+                        </div>
+                    </div>
+                <% } %>
+                
+                <% if (section === 'links' && data.profile?.links && data.profile.links.length > 0) { %>
+                    <div class="bg-white rounded p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-4">Links</h2>
+                        <div class="space-y-3">
+                            <% data.profile.links.forEach(link => { %>
+                                <div class="flex-1 items-center">
+                                    <div class="flex items-center gap-2">
+                                        <span class="font-medium text-gray-900"><%= link.name %></span>
+                                        <% if (link?.is_verified) { %>
+                                            <div class="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                                                <span class="material-icons text-white text-xs">check</span>
+                                            </div>
+                                        <% } %>
+                                    </div>
+                                    <a href="<%= link.link %>" class="text-xs text-blue-500 hover:underline">
+                                        <%= link.link.replace('https://', '') %>
+                                    </a>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                <% } %>
+                
+                <% if (section === 'interests' && data.profile?.interests && data.profile.interests.length > 0) { %>
+                    <div class="bg-white rounded p-6">
+                        <h2 class="text-lg font-semibold text-gray-900 mb-4">Interests</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <% data.profile.interests.forEach(interest => { %>
+                                <span class="px-3 py-1 bg-gray-50 text-gray-700 font-medium text-xs">
+                                    <%= interest %>
+                                </span>
+                            <% }) %>
+                        </div>
+                    </div>
+                <% } %>
+            <% }) %>
+        <% } %>
+    </div>
+    
+    <script>
+        function copyLink() {
+            const link = window.location.href;
+            navigator.clipboard.writeText(link).then(() => {
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = 'Link copied to clipboard!';
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.className = 'toast show';
+                    setTimeout(() => {
+                        toast.className = 'toast';
+                        setTimeout(() => {
+                            toast.remove();
+                        }, 300);
+                    }, 2000);
+                }, 100);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
