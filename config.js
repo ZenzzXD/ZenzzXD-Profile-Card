@@ -46,10 +46,10 @@ const config = {
                     link: 'https://nekonime.nekorinn.my.id'
                 },
                 {
-                    thumbnail: '/nekorinnbot_img.png',
-                    name: 'Nekorinn Bott',
-                    desc: 'A simple WhatsApp bot with a plugin-based handler. It’s modular, easy to extend, and designed for efficient command execution.',
-                    link: 'https://wa.me/6285182338584?text=.menu'
+                    thumbnail: '/mnmlistai_img.png',
+                    name: 'Mnmlist AI (Beta)',
+                    desc: 'A minimalist AI tool designed for simplicity and clarity. Focus on what matters—no clutter, just intelligent solutions.',
+                    link: 'https://mnmlist-ai.vercel.app'
                 }
             ],
             links: [
