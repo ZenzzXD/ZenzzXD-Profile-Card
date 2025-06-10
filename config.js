@@ -47,9 +47,9 @@ const config = {
                 },
                 {
                     thumbnail: '/mnmlistai_img.png',
-                    name: 'Mnmlist AI (Beta)',
+                    name: 'Mnmlist AI',
                     desc: 'A minimalist AI tool designed for simplicity and clarity. Focus on what matters—no clutter, just intelligent solutions.',
-                    link: 'https://mnmlist-ai.vercel.app'
+                    link: 'https://mnmlist.up.railway.app'
                 }
             ],
             links: [
