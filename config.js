@@ -9,16 +9,16 @@ const config = {
         profile: {
             personal: {
                 profile_url: '/profile_img.jpg',
-                name: 'Rynn',
+                name: 'ZenzzXD',
                 is_verified: true,
-                pronunciation: 'Rinn',
+                pronunciation: '-',
                 pronouns: 'He/She?',
-                location: 'Sragen, Jawa Tengah',
+                location: 'Surabaya, Jawa Timur',
                 about: 'Just a newbie exploring the world of coding.'
             },
             professional: {
                 job_title: 'Web Developer',
-                company: 'Nekorinn Folders.'
+                company: 'ZenzzXD Folders.'
             },
             projects: [
                 {
