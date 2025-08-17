@@ -11,7 +11,7 @@ const config = {
                 profile_url: '/profile_img.jpg',
                 name: 'ZenzzXD',
                 is_verified: true,
-                pronunciation: '-',
+                pronunciation: 'zenn',
                 pronouns: 'He/She?',
                 location: 'Surabaya, Jawa Timur',
                 about: 'Just a newbie exploring the world of coding.'
@@ -22,8 +22,8 @@ const config = {
             },
             projects: [
                 {
-                    thumbnail: '/hydromind_img.png',
-                    name: 'HydroMind AI',
+                    thumbnail: '/emailsender_img.png',
+                    name: 'Zenzxz Email Sender',
                     desc: 'A powerful AI assistant built to help with everyday tasks and answer questions efficiently.',
                     link: 'https://mind.hydrooo.web.id'
                 },
